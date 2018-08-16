@@ -6,7 +6,7 @@
     android:id="@+id/frglogin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginFragment">
+    tools:context=".Fragments.LoginFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -81,6 +81,7 @@
                         android:hint="Username"
                         android:inputType="text"
                         android:padding="15dp" />
+
                 </android.support.design.widget.TextInputLayout>
 
                 <android.support.design.widget.TextInputLayout
