@@ -1,4 +1,4 @@
-package com.example.pcardoso.spendinglist.Fragments;
+package com.example.pcardoso.spendinglist.expenses;
 
 
 import android.os.Bundle;
@@ -12,10 +12,10 @@ import com.example.pcardoso.spendinglist.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class DefineCategorieFragment extends Fragment {
+public class ExpensesFragment extends Fragment {
 
 
-    public DefineCategorieFragment() {
+    public ExpensesFragment() {
         // Required empty public constructor
     }
 
@@ -24,7 +24,7 @@ public class DefineCategorieFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_define_categorie, container, false);
+        return inflater.inflate(R.layout.fragment_expenses, container, false);
     }
 
 }

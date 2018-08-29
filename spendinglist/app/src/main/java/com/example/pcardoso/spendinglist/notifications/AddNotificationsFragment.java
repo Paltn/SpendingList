@@ -1,4 +1,4 @@
-package com.example.pcardoso.spendinglist.Fragments;
+package com.example.pcardoso.spendinglist.notifications;
 
 
 import android.os.Bundle;
@@ -12,10 +12,10 @@ import com.example.pcardoso.spendinglist.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class AddInvestmentsFragment extends Fragment {
+public class AddNotificationsFragment extends Fragment {
 
 
-    public AddInvestmentsFragment() {
+    public AddNotificationsFragment() {
         // Required empty public constructor
     }
 
@@ -24,7 +24,7 @@ public class AddInvestmentsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add_investments, container, false);
+        return inflater.inflate(R.layout.fragment_add_notifications, container, false);
     }
 
 }

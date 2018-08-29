@@ -1,6 +1,7 @@
-package com.example.pcardoso.spendinglist.Fragments;
+package com.example.pcardoso.spendinglist.users;
 
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -9,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.example.pcardoso.spendinglist.Fragments.CreateAccountFragment;
 import com.example.pcardoso.spendinglist.R;
 
 
@@ -17,6 +17,11 @@ import com.example.pcardoso.spendinglist.R;
  * A simple {@link Fragment} subclass.
  */
 public class LoginFragment extends Fragment {
+
+    private static final String TAG = "LoginFragment";
+    private SharedPreferences sharedPreferences;
+    private  SharedPreferences.Editor editor;
+
 
 
     @Override
