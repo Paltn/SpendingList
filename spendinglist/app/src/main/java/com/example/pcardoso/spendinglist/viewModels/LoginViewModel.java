@@ -4,7 +4,7 @@ import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 
 import com.example.pcardoso.spendinglist.BR;
-import com.example.pcardoso.spendinglist.users.User;
+import com.example.pcardoso.spendinglist.view.fragment.users.User;
 
 public class LoginViewModel extends BaseObservable {
 

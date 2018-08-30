@@ -1,55 +1,69 @@
-package com.example.pcardoso.spendinglist;
+package com.example.pcardoso.spendinglist.view.activity;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
-import com.example.pcardoso.spendinglist.expenses.AddExpensesFragment;
-import com.example.pcardoso.spendinglist.users.CreateAccountFragment;
-import com.example.pcardoso.spendinglist.users.LoginFragment;
+import com.example.pcardoso.spendinglist.R;
+import com.example.pcardoso.spendinglist.view.fragment.users.LoginFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
-   // private static final String TAG = "MainActivity";
+   // private static final String TAG = "LoginActivity";
     private SharedPreferences preferences;
     private  SharedPreferences.Editor editor;
 
     private EditText memail;
     private EditText mpassword;
     private Button btnlogin;
+    private Button btnregister;
     private CheckBox mcheckBox;
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-/*
+        setContentView(R.layout.fragment_login);
+
        if (savedInstanceState ==null)
         {
             getSupportFragmentManager().beginTransaction().add(R.id.main, new LoginFragment() ).commit();
 
-        }*/
+        }
 
+
+/*
         memail=(EditText) findViewById(R.id.edtemaill);
         mpassword=(EditText) findViewById(R.id.edtpassword);
         btnlogin = (Button) findViewById(R.id.btnlogin);
+        btnregister = (Button) findViewById(R.id.btnregister);
         mcheckBox = (CheckBox) findViewById(R.id.checkBox);
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
         editor=preferences.edit();
 
         checkSharedPreferences();
+
+
+
+
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(mcheckBox.isChecked())
-                {
+
+                if (memail.getText().toString().isEmpty() || mpassword.getText().toString().isEmpty()) {
+                    Toast.makeText(getApplicationContext(), "EMPTY", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), "GO", Toast.LENGTH_LONG).show();
+
+                    Intent aa = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(aa);
+
+                }
+
+                if (mcheckBox.isChecked()) {
                     //set  a checkbox when aplication start
                     editor.putString(getString(R.string.checkbox), "True");
                     editor.commit();
@@ -58,17 +72,14 @@ public class MainActivity extends AppCompatActivity {
                     editor.putString(getString(R.string.email), email);
                     editor.commit();
 
-
                     String password = mpassword.getText().toString();
                     editor.putString(getString(R.string.password), password);
                     editor.commit();
 
-
-                }else{
+                } else {
                     //set  a checkbox when aplication start
                     editor.putString(getString(R.string.checkbox), "False");
                     editor.commit();
-
 
                     editor.putString(getString(R.string.email), "");
                     editor.commit();
@@ -78,10 +89,11 @@ public class MainActivity extends AppCompatActivity {
 
                 }
             }
-        });
+        });*/
+
     }
 
-    private void  checkSharedPreferences()
+    /*private void  checkSharedPreferences()
     {
         String check  = preferences.getString(getString(R.string.checkbox), "False");
         String email  = preferences.getString(getString(R.string.email), "");
@@ -98,13 +110,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-    }
-   /* public void go(View v)
-    {
-        Intent a = new Intent(this, NavActivity.class);
-        startActivity(a);
-
     }*/
+
 
 
 

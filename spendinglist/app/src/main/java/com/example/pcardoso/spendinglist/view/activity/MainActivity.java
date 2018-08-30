@@ -1,11 +1,6 @@
-package com.example.pcardoso.spendinglist;
+package com.example.pcardoso.spendinglist.view.activity;
 
-import android.app.Fragment;
 import android.os.Bundle;
-import android.os.Message;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -16,20 +11,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.example.pcardoso.spendinglist.expenses.AddExpensesFragment;
+import com.example.pcardoso.spendinglist.R;
 
-public class NavActivity extends AppCompatActivity
+public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nav);
+        setContentView(R.layout.activity_main);
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -80,22 +74,26 @@ public class NavActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.profile) {
             Toast.makeText(getApplicationContext(), "AAAA", Toast.LENGTH_LONG).show();
 
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.notification) {
             Toast.makeText(getApplicationContext(), "AAAA", Toast.LENGTH_LONG).show();
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.report) {
             Toast.makeText(getApplicationContext(), "AAAA", Toast.LENGTH_LONG).show();
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.budget) {
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.category) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.simulator) {
 
         }
+        else if (id == R.id.report) {
+
+        }
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

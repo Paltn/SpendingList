@@ -43,13 +43,8 @@ public class CreateAccountFragment extends Fragment {
         if (binding.edtpasswords.getText().toString().equals( binding.edtnewpassword.getText().toString() ))
             Toast.makeText(getActivity(), "Register", Toast.LENGTH_LONG).show();
         else
-        Toast.makeText(getActivity(), "Not Iquals", Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(), "Not Iquals", Toast.LENGTH_LONG).show();
 
     }
-
-
-
-
-
 
 }

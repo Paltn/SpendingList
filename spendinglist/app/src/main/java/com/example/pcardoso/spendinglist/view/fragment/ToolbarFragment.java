@@ -1,4 +1,4 @@
-package com.example.pcardoso.spendinglist.fragments;
+package com.example.pcardoso.spendinglist.view.fragment;
 
 
 import android.os.Bundle;
