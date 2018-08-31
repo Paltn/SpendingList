@@ -3,12 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
 
-    android:id="@+id/frglogin"
+    android:id="@+id/fraglogin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.fragment.users.LoginFragment">
-
-    <!-- TODO: Update blank fragment layout -->
 
 
     <ScrollView
@@ -151,14 +149,14 @@
 
 
                     android:backgroundTint="@color/bluecolor"
-                    android:onClick="register"
                     android:text="Register"
                     android:textColor="@android:color/background_light"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/btnlogin" />
+                    app:layout_constraintTop_toBottomOf="@+id/btnlogin"
+                    tools:ignore="OnClick" />
 
 
             </android.support.constraint.ConstraintLayout>

@@ -1,4 +1,4 @@
-package com.example.pcardoso.spendinglist.users;
+package com.example.pcardoso.spendinglist.view.fragment.users;
 
 
 
@@ -22,8 +22,8 @@ import com.example.pcardoso.spendinglist.viewModels.LoginViewModel;
 
 public class CreateAccountFragment extends Fragment {
 
+    //FragmentCreateAccountBinding binding;
     FragmentCreateAccountBinding binding;
-
     public CreateAccountFragment() {
         // Required empty public constructor
     }
@@ -33,18 +33,16 @@ public class CreateAccountFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_create_account, container, false);
-        binding.setBatatas(this);
+        //binding.setBatatas(this);
         return binding.getRoot();
     }
 
     public void onClick() {
 
-
         if (binding.edtpasswords.getText().toString().equals( binding.edtnewpassword.getText().toString() ))
             Toast.makeText(getActivity(), "Register", Toast.LENGTH_LONG).show();
         else
             Toast.makeText(getActivity(), "Not Iquals", Toast.LENGTH_LONG).show();
-
     }
 
 }

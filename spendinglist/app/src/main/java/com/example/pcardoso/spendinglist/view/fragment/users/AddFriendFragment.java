@@ -14,11 +14,9 @@ import com.example.pcardoso.spendinglist.R;
  */
 public class AddFriendFragment extends Fragment {
 
-
     public AddFriendFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

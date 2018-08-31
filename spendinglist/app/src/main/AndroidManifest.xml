@@ -19,7 +19,9 @@
         <activity
             android:name=".view.activity.MainActivity"
             android:label="@string/title_activity_nav"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".view.activity.AreaUserActivity" />
+        <activity android:name=".view.activity.RegisterUsersActivity"></activity>
     </application>
 
 </manifest>

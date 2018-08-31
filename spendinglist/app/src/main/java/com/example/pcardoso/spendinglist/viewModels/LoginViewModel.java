@@ -9,8 +9,8 @@ import com.example.pcardoso.spendinglist.view.fragment.users.User;
 public class LoginViewModel extends BaseObservable {
 
     private User user;
-    private String successMessage = "login ";
-    private String errorMessage = "email or password invalid";
+    private String successMessage = "Login ";
+    private String errorMessage = "EMAIL or PASSWORD invalid";
 
     @Bindable
     public String toastMessage = null;

@@ -1,11 +1,17 @@
 package com.example.pcardoso.spendinglist.view.activity;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.pcardoso.spendinglist.R;
 import com.example.pcardoso.spendinglist.view.fragment.users.LoginFragment;
@@ -20,6 +26,8 @@ public class LoginActivity extends AppCompatActivity {
     private EditText mpassword;
     private Button btnlogin;
     private Button btnregister;
+    private AlertDialog alerta;
+
     private CheckBox mcheckBox;
 
 
@@ -28,14 +36,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_login);
 
-       if (savedInstanceState ==null)
-        {
-            getSupportFragmentManager().beginTransaction().add(R.id.main, new LoginFragment() ).commit();
-
-        }
-
-
-/*
         memail=(EditText) findViewById(R.id.edtemaill);
         mpassword=(EditText) findViewById(R.id.edtpassword);
         btnlogin = (Button) findViewById(R.id.btnlogin);
@@ -45,9 +45,6 @@ public class LoginActivity extends AppCompatActivity {
         editor=preferences.edit();
 
         checkSharedPreferences();
-
-
-
 
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,7 +57,6 @@ public class LoginActivity extends AppCompatActivity {
 
                     Intent aa = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(aa);
-
                 }
 
                 if (mcheckBox.isChecked()) {
@@ -86,14 +82,21 @@ public class LoginActivity extends AppCompatActivity {
 
                     editor.putString(getString(R.string.password), "");
                     editor.commit();
-
                 }
             }
-        });*/
+        });
 
+        btnregister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent aa = new Intent(LoginActivity.this, RegisterUsersActivity.class);
+                startActivity(aa);
+            }
+        });
     }
 
-    /*private void  checkSharedPreferences()
+    private void  checkSharedPreferences()
     {
         String check  = preferences.getString(getString(R.string.checkbox), "False");
         String email  = preferences.getString(getString(R.string.email), "");
@@ -109,8 +112,11 @@ public class LoginActivity extends AppCompatActivity {
             mcheckBox.setChecked(false);
         }
 
+    }
 
-    }*/
+
+
+
 
 
 

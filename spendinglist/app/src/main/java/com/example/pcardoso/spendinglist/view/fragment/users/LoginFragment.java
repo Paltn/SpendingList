@@ -15,7 +15,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.pcardoso.spendinglist.R;
-import com.example.pcardoso.spendinglist.users.CreateAccountFragment;
+import com.example.pcardoso.spendinglist.view.fragment.users.CreateAccountFragment;
 
 
 /**
@@ -25,20 +25,17 @@ public class LoginFragment extends Fragment {
 
     private SharedPreferences preferences;
     private SharedPreferences.Editor editor;
-
     private EditText memail;
     private EditText mpassword;
     private Button btnlogin;
     private Button btnregister;
     private CheckBox mcheckBox;
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_login, container, false);
-
 
         memail = (EditText) view.findViewById(R.id.edtemaill);
         mpassword = (EditText) view.findViewById(R.id.edtpassword);
@@ -51,11 +48,9 @@ public class LoginFragment extends Fragment {
 
         checkSharedPreferences();
 
-
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
 
                 if (memail.getText().toString().isEmpty() || mpassword.getText().toString().isEmpty()) {
                     //  Toast.makeText(getApplicationContext(), "EMPTY", Toast.LENGTH_LONG).show();
@@ -63,13 +58,11 @@ public class LoginFragment extends Fragment {
 
                 } else {
 
-
                     FragmentTransaction fr = getFragmentManager().beginTransaction();
-                    fr.replace(R.id.main, new ProfileFragment());
+                    fr.replace(R.id.login, new ProfileFragment());
                     fr.addToBackStack(null).commit();
                     Toast.makeText(getContext(), "Welcome", Toast.LENGTH_LONG).show();
                     //  Intent aa = new Intent(LoginActivity.this, MainActivity.class);
-
                 }
 
                 if (mcheckBox.isChecked()) {
@@ -84,7 +77,6 @@ public class LoginFragment extends Fragment {
                     String password = mpassword.getText().toString();
                     editor.putString(getString(R.string.password), password);
                     editor.commit();
-
                 } else {
                     //set  a checkbox when aplication start
                     editor.putString(getString(R.string.checkbox), "False");
@@ -96,7 +88,6 @@ public class LoginFragment extends Fragment {
                     editor.putString(getString(R.string.password), "");
                     editor.commit();
                 }
-
             }
         });
 
@@ -105,7 +96,7 @@ public class LoginFragment extends Fragment {
             public void onClick(View v) {
 
                 FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.main, new CreateAccountFragment());
+                fr.replace(R.id.fragment_container, new CreateAccountFragment());
                 fr.addToBackStack(null).commit();
             }
         });
