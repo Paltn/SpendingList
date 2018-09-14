@@ -5,18 +5,23 @@
     <string name="email">com.example.pcardoso.spendinglist.email</string>
     <string name="password">com.example.pcardoso.spendinglist.password</string>
 
+    <string name="aa">AAA</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string-array name="nomes">
-        <item>item1</item>
-        <item>item2</item>
-        <item>item3</item>
-        <item>item4</item>
-
-
+        <item>Car</item>
+        <item>Automobile</item>
+        <item>Vacation</item>
     </string-array>
+
+
+    <array name="images">
+        <item>@drawable/baseline_person_24</item>
+        <item>@drawable/baseline_visibility_off_black_18</item>
+        <item>@drawable/baseline_visibility_off_black_18</item>
+    </array>
+
     <string name="title_activity_nav">NavActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -24,4 +29,17 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="title">Title</string>
+    <string name="enter_title">Enter Title</string>
+    <string name="category">Category</string>
+    <string name="description">Description</string>
+    <string name="enter_description">Enter Description</string>
+    <string name="hint_enter_amount">Enter Amount</string>
+    <string name="amount">AMOUNT</string>
+    <string name="account">ACCOUNT</string>
+    <string name="date">DATE</string>
+    <string name="new_expense">NEW</string>
+    <string name="save">SAVE</string>
+
+
 </resources>

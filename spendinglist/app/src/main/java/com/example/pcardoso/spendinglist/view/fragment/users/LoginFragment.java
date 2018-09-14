@@ -59,7 +59,7 @@ public class LoginFragment extends Fragment {
                 } else {
 
                     FragmentTransaction fr = getFragmentManager().beginTransaction();
-                    fr.replace(R.id.login, new ProfileFragment());
+                 //   fr.replace(R.id.login, new ProfileFragment());
                     fr.addToBackStack(null).commit();
                     Toast.makeText(getContext(), "Welcome", Toast.LENGTH_LONG).show();
                     //  Intent aa = new Intent(LoginActivity.this, MainActivity.class);

@@ -1,4 +1,4 @@
-package com.example.pcardoso.spendinglist.view.fragment.users;
+package com.example.pcardoso.spendinglist.model;
 
 import android.support.annotation.NonNull;
 
@@ -11,6 +11,8 @@ public class User {
     private String Email;
     @NonNull
     private String Password;
+
+
 
     public  User(@NonNull final String email, @NonNull final String password) {
         Email = email;

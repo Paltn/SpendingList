@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string-array name="category">
+    <item>Food</item>
+    <item>Car</item>
+    <item>Electricity</item>
+    <item>Water</item>
+
+    </string-array>
+    <string-array name="wallet">
+        <item>Money</item>
+        <item>Card</item>
+        <item>Other</item>
+    </string-array>
+
+
+</resources>

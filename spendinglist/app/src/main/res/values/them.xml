@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="EditForm" >
+    <style name="EditFormm" >
         <item name="android:textColor">#00FF00</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginTop">8dp</item>
         <item name="android:background">@drawable/line</item>
     </style>
+
 </resources>

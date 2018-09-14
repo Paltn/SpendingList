@@ -1,10 +1,9 @@
 package com.example.pcardoso.spendinglist.view.activity;
 
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.SharedPreferences;
+import android.databinding.BindingAdapter;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -14,7 +13,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.pcardoso.spendinglist.R;
-import com.example.pcardoso.spendinglist.view.fragment.users.LoginFragment;
+import com.example.pcardoso.spendinglist.model.User;
+import com.example.pcardoso.spendinglist.databinding.ActivityLoginBinding;
+import com.example.pcardoso.spendinglist.viewmodelss.LoginViewModel;
+
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -27,65 +29,35 @@ public class LoginActivity extends AppCompatActivity {
     private Button btnlogin;
     private Button btnregister;
     private AlertDialog alerta;
-
     private CheckBox mcheckBox;
+    private User user;
 
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_login);
+        setContentView(R.layout.activity_report);
 
-        memail=(EditText) findViewById(R.id.edtemaill);
-        mpassword=(EditText) findViewById(R.id.edtpassword);
-        btnlogin = (Button) findViewById(R.id.btnlogin);
-        btnregister = (Button) findViewById(R.id.btnregister);
-        mcheckBox = (CheckBox) findViewById(R.id.checkBox);
-        preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        editor=preferences.edit();
+        ActivityLoginBinding activityLoginBinding = DataBindingUtil.setContentView(this, R.layout.activity_login);
+        activityLoginBinding.setView(new LoginViewModel());
+     //activityLoginBinding.setView(new LoginViewModel());
+        activityLoginBinding.executePendingBindings();
 
-        checkSharedPreferences();
 
-        btnlogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                if (memail.getText().toString().isEmpty() || mpassword.getText().toString().isEmpty()) {
-                    Toast.makeText(getApplicationContext(), "EMPTY", Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(getApplicationContext(), "GO", Toast.LENGTH_LONG).show();
+        //btnlogin = (Button) findViewById(R.id.btnlogin);
+        //btnregister = (Button) findViewById(R.id.btnregister);
+        //mcheckBox = (CheckBox) findViewById(R.id.checkBox);
 
-                    Intent aa = new Intent(LoginActivity.this, MainActivity.class);
-                    startActivity(aa);
-                }
 
-                if (mcheckBox.isChecked()) {
-                    //set  a checkbox when aplication start
-                    editor.putString(getString(R.string.checkbox), "True");
-                    editor.commit();
+        //preferences = PreferenceManager.getDefaultSharedPreferences(this);
+       // editor=preferences.edit();
 
-                    String email = memail.getText().toString();
-                    editor.putString(getString(R.string.email), email);
-                    editor.commit();
+       // checkSharedPreferences();
 
-                    String password = mpassword.getText().toString();
-                    editor.putString(getString(R.string.password), password);
-                    editor.commit();
 
-                } else {
-                    //set  a checkbox when aplication start
-                    editor.putString(getString(R.string.checkbox), "False");
-                    editor.commit();
 
-                    editor.putString(getString(R.string.email), "");
-                    editor.commit();
-
-                    editor.putString(getString(R.string.password), "");
-                    editor.commit();
-                }
-            }
-        });
-
+/*
         btnregister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,17 +65,27 @@ public class LoginActivity extends AppCompatActivity {
                 Intent aa = new Intent(LoginActivity.this, RegisterUsersActivity.class);
                 startActivity(aa);
             }
-        });
+        });*/
     }
 
-    private void  checkSharedPreferences()
+    @BindingAdapter({"toastMessage"})
+    public static void runMe(View view, String message) {
+        if (message != null)
+            Toast.makeText(view.getContext(), message, Toast.LENGTH_SHORT).show();
+    }
+
+   /* private void  checkSharedPreferences()
     {
         String check  = preferences.getString(getString(R.string.checkbox), "False");
         String email  = preferences.getString(getString(R.string.email), "");
         String password  = preferences.getString(getString(R.string.password), "");
 
-        memail.setText(email);
-        mpassword.setText(password);
+
+       // user.setEmail(email);
+
+       // user.setEmail(email);
+       // user.setPassword(password);
+
 
         if (check.equals("True")){
             mcheckBox.setChecked(true);
@@ -112,7 +94,7 @@ public class LoginActivity extends AppCompatActivity {
             mcheckBox.setChecked(false);
         }
 
-    }
+    }*/
 
 
 

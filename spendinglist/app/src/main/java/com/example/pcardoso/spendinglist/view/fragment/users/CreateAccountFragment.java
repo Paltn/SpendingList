@@ -8,16 +8,12 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.Toast;
-
-import android.databinding.BindingAdapter;
 
 import com.example.pcardoso.spendinglist.R;
 
 
 import com.example.pcardoso.spendinglist.databinding.FragmentCreateAccountBinding;
-import com.example.pcardoso.spendinglist.viewModels.LoginViewModel;
 
 
 public class CreateAccountFragment extends Fragment {
