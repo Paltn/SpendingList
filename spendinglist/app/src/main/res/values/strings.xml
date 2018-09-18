@@ -9,6 +9,8 @@
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <!--names Account, addExpense-->
+
     <string-array name="namesAccount">
         <item>Wallet</item>
         <item>CreditCard</item>
@@ -19,7 +21,9 @@
         <item>@drawable/baseline_visibility_off_black_18</item>
         <item>@drawable/baseline_visibility_off_black_18</item>
     </array>
+    <!--END names Account, addExpense-->
 
+    <!-- namesCategory Account, addExpense -->
     <string-array name="namescategory">
         <item>Holiday</item>
         <item>Restaurant</item>
@@ -28,7 +32,6 @@
         <item>Light</item>
         <item>Accommodation</item>
     </string-array>
-
     <array name="imagesCategoryAccount">
         <item>@drawable/beachddexpense</item>
         <item>@drawable/restaurantddexpense</item>
@@ -37,6 +40,8 @@
         <item>@drawable/lightddexpense</item>
         <item>@drawable/bedddexpense</item>
     </array>
+    <!--End Category, addExpense-->
+
 
     <string name="title_activity_nav">NavActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -58,7 +63,5 @@
     <string name="save">SAVE</string>
     <string name="image">imagespiner</string>
     <string name="imagedes">desrecption</string>
-
-
 
 </resources>

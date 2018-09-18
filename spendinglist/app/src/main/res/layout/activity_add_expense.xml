@@ -79,6 +79,7 @@
                             android:layout_marginRight="8dp"
                             android:background="@color/white"
                             android:drawableStart="@drawable/euro"
+                            android:drawablePadding="12dp"
                             android:hint="@string/hint_enter_amount"
                             android:inputType="numberDecimal"
                             android:singleLine="true"
@@ -142,7 +143,6 @@
                         android:hint="@string/enter_description"
                         android:inputType="text"
                         android:singleLine="true"
-
                         android:textSize="18sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -175,22 +175,9 @@
                         android:layout_marginTop="8dp"
                         android:text="@string/category"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/imagecategory"
+
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <ImageView
-                        android:id="@+id/imagecategory"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="8dp"
-                        android:contentDescription="@string/imagedes"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textcategory"
-                        app:srcCompat="@drawable/list"
-                        tools:ignore="VectorDrawableCompat" />
 
                     <Spinner
                         android:id="@+id/spinner_category"
@@ -198,12 +185,13 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginStart="4dp"
                         android:layout_marginTop="8dp"
                         app:layout_constraintBottom_toBottomOf="parent"
+
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/imagecategory"
+                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textcategory"
                         app:layout_constraintVertical_bias="0.111" />
                 </android.support.constraint.ConstraintLayout>

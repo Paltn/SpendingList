@@ -45,7 +45,7 @@ public class AddExpenseActivity extends AppCompatActivity {
     private void mcustomadapter(Spinner spinnerAccount) {
 
         Integer[] images = {R.drawable.wallet, R.drawable.creditcard, R.drawable.bank};
-        
+
         CustomAdapter customAdapter = new CustomAdapter(AddExpenseActivity.this,
                 getResources().getStringArray(R.array.namesAccount), images);
         spinnerAccount.setAdapter(customAdapter);
@@ -64,14 +64,9 @@ public class AddExpenseActivity extends AppCompatActivity {
         spCategory.setAdapter(custcatey);
     }
 
+    private void mcalendar() {
+        date.requestFocus();//remove the second click
 
-    @Override
-    public void onUserInteraction() {
-        super.onUserInteraction();
-    }
-    
-    private void mcalendar()
-    {
         date.setInputType(InputType.TYPE_NULL);
 
         date.setOnClickListener(new View.OnClickListener() {
@@ -94,6 +89,13 @@ public class AddExpenseActivity extends AppCompatActivity {
                 picker.show();
             }
         });
-        
+
     }
+
+    @Override
+    public void onUserInteraction() {
+        super.onUserInteraction();
+    }
+
+
 }
