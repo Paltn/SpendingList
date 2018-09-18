@@ -16,23 +16,21 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class CustomAdapter extends ArrayAdapter<Integer>{
+import static com.example.pcardoso.spendinglist.R.layout.custom_spinner;
 
+public class CustomAdapter extends ArrayAdapter<Integer> {
 
-    List<String> titles = new ArrayList<>();
-    List<Integer> images = new ArrayList<>();
+    private List<String> titles = new ArrayList<>();
+    private List<Integer> images = new ArrayList<>();
+    private Context mContext;
 
-    Context mContext;
-
-    public CustomAdapter(@NonNull Context context, String[] titles, Integer[] images ) {
-        super(context, R.layout.custom_spinner);
+    public CustomAdapter(@NonNull Context context, String[] titles, Integer[] images) {
+        super(context, custom_spinner);
 
         this.titles.addAll(Arrays.asList(titles));
         this.images.addAll(Arrays.asList(images));
         this.mContext = context;
     }
-
-
 
     @Override
     public View getDropDownView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -46,33 +44,37 @@ public class CustomAdapter extends ArrayAdapter<Integer>{
 
     @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        ViewHolder mViewHolder = new ViewHolder();
+    public View getView(int position, @Nullable View view, @NonNull ViewGroup parent) {
+        ViewHolder viewHolder = new ViewHolder();
 
-        if (convertView == null) {
-            LayoutInflater mInflater = (LayoutInflater) mContext.
-                    getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = mInflater.inflate(R.layout.custom_spinner, parent, false);
-            mViewHolder.title =  convertView.findViewById(R.id.tvName);
-            mViewHolder.image =  convertView.findViewById(R.id.ivFlag);
-            convertView.setTag(mViewHolder);
+        if (view == null) {
 
-        }else {
-            mViewHolder = (ViewHolder) convertView.getTag();
+            LayoutInflater layoutInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+            view = layoutInflater.inflate(R.layout.custom_spinner, parent, false);
+
+            viewHolder.title = view.findViewById(R.id.tvName);
+
+            viewHolder.image = view.findViewById(R.id.ivFlag);
+
+            view.setTag(viewHolder);
+
+        } else {
+            viewHolder = (ViewHolder) view.getTag();
         }
 
         String title = titles.get(position);
-        if(title!= null && !title.isEmpty()){
-            mViewHolder.title.setText(title);
-            mViewHolder.image.setImageResource(images.get(position));
-        }
-       return convertView;
 
+        if (title != null && !title.isEmpty()) {
+            viewHolder.title.setText(title);
+            viewHolder.image.setImageResource(images.get(position));
+        }
+
+        return view;
     }
 
     private static class ViewHolder {
-       ImageView image;
+        ImageView image;
         TextView title;
-
     }
 }

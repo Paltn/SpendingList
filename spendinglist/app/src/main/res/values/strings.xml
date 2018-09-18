@@ -9,17 +9,33 @@
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string-array name="nomes">
-        <item>Car</item>
-        <item>Automobile</item>
-        <item>Vacation</item>
+    <string-array name="namesAccount">
+        <item>Wallet</item>
+        <item>CreditCard</item>
+        <item>Bank</item>
     </string-array>
-
-
-    <array name="images">
+    <array name="imagesAccount">
         <item>@drawable/baseline_person_24</item>
         <item>@drawable/baseline_visibility_off_black_18</item>
         <item>@drawable/baseline_visibility_off_black_18</item>
+    </array>
+
+    <string-array name="namescategory">
+        <item>Holiday</item>
+        <item>Restaurant</item>
+        <item>Car</item>
+        <item>Water</item>
+        <item>Light</item>
+        <item>Accommodation</item>
+    </string-array>
+
+    <array name="imagesCategoryAccount">
+        <item>@drawable/beachddexpense</item>
+        <item>@drawable/restaurantddexpense</item>
+        <item>@drawable/carddexpense</item>
+        <item>@drawable/wateraddexpense</item>
+        <item>@drawable/lightddexpense</item>
+        <item>@drawable/bedddexpense</item>
     </array>
 
     <string name="title_activity_nav">NavActivity</string>
@@ -35,11 +51,14 @@
     <string name="description">Description</string>
     <string name="enter_description">Enter Description</string>
     <string name="hint_enter_amount">Enter Amount</string>
-    <string name="amount">AMOUNT</string>
+    <string name="amount">AMOUNT(EURO)</string>
     <string name="account">ACCOUNT</string>
-    <string name="date">DATE</string>
+    <string name="date">Date</string>
     <string name="new_expense">NEW</string>
     <string name="save">SAVE</string>
+    <string name="imagespiner">imagespiner</string>
+    <string name="imagedes">desrecption</string>
+
 
 
 </resources>
