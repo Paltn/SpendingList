@@ -5,21 +5,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ImageView
-        android:id="@+id/ivFlag"
+        android:id="@+id/imgAccount"
         android:layout_width="36dp"
         android:layout_height="36dp"
         android:padding="5dp"
-        android:contentDescription="@string/imagespiner"
+        android:contentDescription="@string/image"
         app:srcCompat="@mipmap/ic_launcher" />
 
     <TextView
-        android:id="@+id/tvName"
+        android:id="@+id/txtTitleAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/ivFlag"
+        android:layout_toEndOf="@+id/imgAccount"
         android:padding="5dp"
         android:textColor="@color/colorAccent"
-        android:textSize="20sp"
-        />
+        android:textSize="20sp" />
 
 </RelativeLayout>

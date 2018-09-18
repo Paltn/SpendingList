@@ -193,7 +193,8 @@
                         tools:ignore="VectorDrawableCompat" />
 
                     <Spinner
-                        android:id="@+id/spcategory"
+                        android:id="@+id/spinner_category"
+
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"

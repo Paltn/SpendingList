@@ -30,25 +30,48 @@ public class AddExpenseActivity extends AppCompatActivity {
 
         date = findViewById(R.id.editdate);
         final Spinner spinnerAccount = findViewById(R.id.spinner_account);
+        final Spinner spCategory = findViewById(R.id.spinner_category);
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
         date.setText(dateFormat.format(new Date()));
         dateFormat = new SimpleDateFormat("dd.MMM.yyy");
         date.setText(dateFormat.format(new Date()));
 
-        Integer[] images = {R.drawable.wallet, R.drawable.creditcard, R.drawable.bank};
+        mcustomadapter(spinnerAccount);//call mcustomadapter
+        mcustomadaptercategory(spCategory);
+        mcalendar();
+    }
 
+    private void mcustomadapter(Spinner spinnerAccount) {
+
+        Integer[] images = {R.drawable.wallet, R.drawable.creditcard, R.drawable.bank};
+        
         CustomAdapter customAdapter = new CustomAdapter(AddExpenseActivity.this,
                 getResources().getStringArray(R.array.namesAccount), images);
-
         spinnerAccount.setAdapter(customAdapter);
+    }
+
+    private void mcustomadaptercategory(Spinner spCategory) {
+
+        Integer[] images = {R.drawable.beachddexpense,
+                R.drawable.restaurantddexpense,
+                R.drawable.carddexpense, R.drawable.wateraddexpense,
+                R.drawable.lightddexpense,
+                R.drawable.bedddexpense};
+
+        CustomAdapter custcatey = new CustomAdapter(AddExpenseActivity.this,
+                getResources().getStringArray(R.array.namescategory), images);
+        spCategory.setAdapter(custcatey);
+    }
 
 
-
-
-
-//rever isto/ usar databinding
-
+    @Override
+    public void onUserInteraction() {
+        super.onUserInteraction();
+    }
+    
+    private void mcalendar()
+    {
         date.setInputType(InputType.TYPE_NULL);
 
         date.setOnClickListener(new View.OnClickListener() {
@@ -66,14 +89,11 @@ public class AddExpenseActivity extends AppCompatActivity {
                             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
 
                                 date.setText(dayOfMonth + "." + (monthOfYear + 1) + "." + year);
-                     }
+                            }
                         }, year, month, day);
                 picker.show();
             }
         });
-    }
-    @Override
-    public void onUserInteraction() {
-        super.onUserInteraction();
+        
     }
 }

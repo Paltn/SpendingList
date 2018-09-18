@@ -50,17 +50,14 @@ public class CustomAdapter extends ArrayAdapter<Integer> {
         if (view == null) {
 
             LayoutInflater layoutInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
             view = layoutInflater.inflate(R.layout.custom_spinner, parent, false);
-
-            viewHolder.title = view.findViewById(R.id.tvName);
-
-            viewHolder.image = view.findViewById(R.id.ivFlag);
-
+            viewHolder.title = view.findViewById(R.id.txtTitleAccount);
+            viewHolder.image = view.findViewById(R.id.imgAccount);
             view.setTag(viewHolder);
 
         } else {
             viewHolder = (ViewHolder) view.getTag();
+
         }
 
         String title = titles.get(position);
