@@ -5,18 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:theme="@style/AppTheme2"
-    tools:context=".view.activity.AddExpenseActivity">
+    tools:context=".view.activity.AddExpenseActivity"
+
+    >
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/ll"
-        android:background="@color/grayback">
+        android:background="@color/grayback"
+
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+           >
 
             <android.support.v7.widget.CardView
                 android:id="@+id/cardview"
@@ -265,12 +270,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:layout_marginTop="8dp">
+                android:layout_marginTop="8dp"
+
+                >
 
 
                 <android.support.constraint.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+
+                    >
 
                     <TextView
                         android:id="@+id/textDate"
@@ -313,6 +322,7 @@
                         android:hint="@string/date"
                         android:inputType="text"
                         android:singleLine="true"
+
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/imageDate"

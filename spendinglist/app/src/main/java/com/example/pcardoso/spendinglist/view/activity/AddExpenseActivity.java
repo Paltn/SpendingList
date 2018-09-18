@@ -29,6 +29,7 @@ public class AddExpenseActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_expense);
 
         date = findViewById(R.id.editdate);
+
         final Spinner spinnerAccount = findViewById(R.id.spinner_account);
         final Spinner spCategory = findViewById(R.id.spinner_category);
 
@@ -65,14 +66,15 @@ public class AddExpenseActivity extends AppCompatActivity {
     }
 
     private void mcalendar() {
-        date.requestFocus();//remove the second click
+
 
         date.setInputType(InputType.TYPE_NULL);
 
         date.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
-
+                date.requestFocus();
                 final Calendar calendar = Calendar.getInstance();
                 final int day = calendar.get(Calendar.DAY_OF_MONTH);
                 int month = calendar.get(Calendar.MONTH);
