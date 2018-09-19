@@ -4,15 +4,15 @@ import java.util.Date;
 
 public class AddExpense {
     private Integer account;
-    private Integer ammount;
+    private Integer amount;
     private String title;
     private Integer category;
     private String description;
     private Date date;
 
-    public AddExpense(Integer account, Integer ammount, String title, Integer category, String description, Date date) {
+    public AddExpense(Integer account, Integer amount, String title, Integer category, String description, Date date) {
         this.account = account;
-        this.ammount = ammount;
+        this.amount = amount;
         this.title = title;
         this.category = category;
         this.description = description;
@@ -27,12 +27,12 @@ public class AddExpense {
         this.account = account;
     }
 
-    public Integer getAmmount() {
-        return this.ammount;
+    public Integer getAmount() {
+        return this.amount;
     }
 
-    public void setAmmount(Integer ammount) {
-        this.ammount = ammount;
+    public void setAmount(Integer ammount) {
+        this.amount = ammount;
     }
 
     public String getTitle() {
