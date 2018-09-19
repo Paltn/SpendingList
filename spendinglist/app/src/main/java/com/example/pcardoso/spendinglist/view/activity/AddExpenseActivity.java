@@ -2,6 +2,7 @@ package com.example.pcardoso.spendinglist.view.activity;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
@@ -50,6 +51,7 @@ public class AddExpenseActivity extends AppCompatActivity {
         CustomAdapter customAdapter = new CustomAdapter(AddExpenseActivity.this,
                 getResources().getStringArray(R.array.namesAccount), images);
         spinnerAccount.setAdapter(customAdapter);
+
     }
 
     private void mcustomadaptercategory(Spinner spCategory) {
@@ -63,10 +65,10 @@ public class AddExpenseActivity extends AppCompatActivity {
         CustomAdapter custcatey = new CustomAdapter(AddExpenseActivity.this,
                 getResources().getStringArray(R.array.namescategory), images);
         spCategory.setAdapter(custcatey);
+
     }
 
     private void mcalendar() {
-
 
         date.setInputType(InputType.TYPE_NULL);
 
@@ -74,7 +76,6 @@ public class AddExpenseActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                date.requestFocus();
                 final Calendar calendar = Calendar.getInstance();
                 final int day = calendar.get(Calendar.DAY_OF_MONTH);
                 int month = calendar.get(Calendar.MONTH);
@@ -97,6 +98,13 @@ public class AddExpenseActivity extends AppCompatActivity {
     @Override
     public void onUserInteraction() {
         super.onUserInteraction();
+    }
+
+
+    public void btnnew (View v)
+    {
+        Intent call = new Intent(this, AddExpenseActivity.class);
+        startActivity(call);
     }
 
 

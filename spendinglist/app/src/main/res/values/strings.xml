@@ -56,11 +56,11 @@
     <string name="description">Description</string>
     <string name="enter_description">Enter Description</string>
     <string name="hint_enter_amount">Enter Amount</string>
-    <string name="amount">AMOUNT(EURO)</string>
-    <string name="account">ACCOUNT</string>
+    <string name="amount">Amount(EURO)</string>
+    <string name="account">Account</string>
     <string name="date">Date</string>
-    <string name="new_expense">NEW</string>
-    <string name="save">SAVE</string>
+    <string name="new_expense">NEW EXPENSE</string>
+    <string name="save">SAVE EXPENSE</string>
     <string name="image">imagespiner</string>
     <string name="imagedes">desrecption</string>
 
