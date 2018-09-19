@@ -1,375 +1,387 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:theme="@style/AppTheme2"
-    tools:context=".view.activity.AddExpenseActivity"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    >
+    <data>
+        <variable name="viewModel"
+            type="com.example.pcardoso.spendinglist.viewmodelss.AddExpenseViewModel"/>
+    </data>
 
-    <ScrollView
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/ll"
-        android:background="@color/grayback"
-
-        >
-
-        <LinearLayout
+        android:layout_height="wrap_content">
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-           >
+            android:layout_height="match_parent"
+            android:layout_above="@+id/ll"
+            android:background="@color/grayback"
 
-            <android.support.v7.widget.CardView
-                android:id="@+id/cardview"
+            android:theme="@style/AppTheme2"
+            tools:context=".view.activity.AddExpenseActivity"
+            >
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:elevation="2dp">
+                android:orientation="vertical"
+                >
 
-                <LinearLayout
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cardview"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/graycolor"
-
-                    android:orientation="horizontal">
+                    android:layout_marginTop="8dp"
+                    android:elevation="2dp">
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:background="@color/white"
-                        android:orientation="vertical">
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/graycolor"
 
-                        <TextView
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@color/white"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginTop="8dp"
+                                android:text="@string/account"
+                                android:textSize="12sp" />
+
+
+                            <Spinner
+                                android:id="@+id/spinner_account"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="16" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"
+                            android:layout_marginStart="2dp"
+                            android:background="@color/white"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginTop="8dp"
+                                android:text="@string/amount"
+                                android:textAlignment="textEnd"
+                                android:textSize="12sp" />
+
+                            <EditText
+                                android:id="@+id/edtAmount"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginRight="8dp"
+                                android:background="@color/white"
+                                android:drawableStart="@drawable/euro"
+                                android:drawablePadding="12dp"
+                                android:hint="@string/hint_enter_amount"
+                                android:inputType="numberDecimal"
+                                android:singleLine="true"
+                                android:textAlignment="textEnd"
+                                android:textSize="24sp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
+
+
+                    <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/textTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginStart="44dp"
                             android:layout_marginTop="8dp"
-                            android:text="@string/account"
-                             android:textSize="12sp" />
+                            android:text="@string/title"
+                            app:layout_constraintBottom_toTopOf="@+id/edtTitle"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/imagetitle"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/imagetitle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:contentDescription="@string/title"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textTitle"
+                            app:srcCompat="@drawable/title"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <EditText
+                            android:id="@+id/edtTitle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@color/white"
+                            android:hint="@string/enter_description"
+                            android:inputType="text"
+                            android:singleLine="true"
+                            android:textSize="18sp"
+                            android:text="@={viewModel.addExpense.title}"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toEndOf="@+id/imagetitle"
+                            app:layout_constraintTop_toBottomOf="@+id/textTitle"
+                            app:layout_constraintVertical_bias="0.0" />
+                    </android.support.constraint.ConstraintLayout>
+
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
+
+
+                    <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textcategory"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginStart="44dp"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/category"
+                            app:layout_constraintEnd_toEndOf="parent"
+
+                            app:layout_constraintTop_toTopOf="parent" />
 
 
                         <Spinner
-                            android:id="@+id/spinner_account"
-                            android:layout_width="match_parent"
-                            android:layout_height="0dp"
-                            android:layout_weight="16" />
+                            android:id="@+id/spinner_category"
 
-                    </LinearLayout>
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginTop="8dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
 
-                    <LinearLayout
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textcategory"
+                            app:layout_constraintVertical_bias="0.111" />
+                    </android.support.constraint.ConstraintLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
+
+
+                    <android.support.constraint.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="2dp"
-                        android:background="@color/white"
-                        android:orientation="vertical">
+                        android:layout_height="match_parent">
 
                         <TextView
+                            android:id="@+id/textDescription"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginStart="44dp"
                             android:layout_marginTop="8dp"
-                            android:text="@string/amount"
-                            android:textAlignment="textEnd"
-                            android:textSize="12sp" />
+                            android:text="@string/description"
+                            app:layout_constraintBottom_toTopOf="@+id/editDescrition"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/imagetitleDescription"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/imagetitleDescription"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:contentDescription="@string/description"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textDescription"
+                            app:layout_constraintVertical_bias="1.0"
+                            app:srcCompat="@drawable/description"
+                            tools:ignore="VectorDrawableCompat" />
 
                         <EditText
-                            android:id="@+id/edtAmount"
-                            android:layout_width="match_parent"
+                            android:id="@+id/editDescrition"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginRight="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
                             android:background="@color/white"
-                            android:drawableStart="@drawable/euro"
-                            android:drawablePadding="12dp"
-                            android:hint="@string/hint_enter_amount"
-                            android:inputType="numberDecimal"
+                            android:hint="@string/enter_description"
+                            android:inputType="text"
                             android:singleLine="true"
-                            android:textAlignment="textEnd"
-                            android:textSize="24sp" />
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toEndOf="@+id/imagetitleDescription"
+                            app:layout_constraintTop_toBottomOf="@+id/textDescription"
+                            app:layout_constraintVertical_bias="0.0" />
+                    </android.support.constraint.ConstraintLayout>
 
 
-                <android.support.constraint.ConstraintLayout
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/textTitle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginStart="44dp"
-                        android:layout_marginTop="8dp"
-                        android:text="@string/title"
-                        app:layout_constraintBottom_toTopOf="@+id/edtTitle"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/imagetitle"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <ImageView
-                        android:id="@+id/imagetitle"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="8dp"
-                        android:contentDescription="@string/title"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textTitle"
-                        app:srcCompat="@drawable/title"
-                        tools:ignore="VectorDrawableCompat" />
-
-                    <EditText
-                        android:id="@+id/edtTitle"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="8dp"
-                        android:background="@color/white"
-                        android:hint="@string/enter_description"
-                        android:inputType="text"
-                        android:singleLine="true"
-                        android:textSize="18sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="1.0"
-                        app:layout_constraintStart_toEndOf="@+id/imagetitle"
-                        app:layout_constraintTop_toBottomOf="@+id/textTitle"
-                        app:layout_constraintVertical_bias="0.0" />
-                </android.support.constraint.ConstraintLayout>
-
-
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
-
-
-                <android.support.constraint.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/textcategory"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginStart="44dp"
-                        android:layout_marginTop="8dp"
-                        android:text="@string/category"
-                        app:layout_constraintEnd_toEndOf="parent"
-
-                        app:layout_constraintTop_toTopOf="parent" />
-
-
-                    <Spinner
-                        android:id="@+id/spinner_category"
-
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginEnd="4dp"
-                        android:layout_marginStart="4dp"
-                        android:layout_marginTop="8dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textcategory"
-                        app:layout_constraintVertical_bias="0.111" />
-                </android.support.constraint.ConstraintLayout>
-
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
-
-
-                <android.support.constraint.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/textDescription"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginStart="44dp"
-                        android:layout_marginTop="8dp"
-                        android:text="@string/description"
-                        app:layout_constraintBottom_toTopOf="@+id/editDescrition"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/imagetitleDescription"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <ImageView
-                        android:id="@+id/imagetitleDescription"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="8dp"
-                        android:contentDescription="@string/description"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textDescription"
-                        app:layout_constraintVertical_bias="1.0"
-                        app:srcCompat="@drawable/description"
-                        tools:ignore="VectorDrawableCompat" />
-
-                    <EditText
-                        android:id="@+id/editDescrition"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="8dp"
-                        android:background="@color/white"
-                        android:hint="@string/enter_description"
-                        android:inputType="text"
-                        android:singleLine="true"
-                        android:textSize="18sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="1.0"
-                        app:layout_constraintStart_toEndOf="@+id/imagetitleDescription"
-                        app:layout_constraintTop_toBottomOf="@+id/textDescription"
-                        app:layout_constraintVertical_bias="0.0" />
-                </android.support.constraint.ConstraintLayout>
-
-
-            </android.support.v7.widget.CardView>
-
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="8dp"
-
-                >
-
-
-                <android.support.constraint.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="8dp"
 
                     >
 
-                    <TextView
-                        android:id="@+id/textDate"
+
+                    <android.support.constraint.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginStart="44dp"
-                        android:layout_marginTop="8dp"
-                        android:text="@string/date"
-                        app:layout_constraintBottom_toTopOf="@+id/editdate"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/imageDate"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        android:layout_height="match_parent"
 
-                    <ImageView
-                        android:id="@+id/imageDate"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="8dp"
-                        android:contentDescription="@string/date"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textDate"
-                        app:srcCompat="@drawable/calendar"
-                        tools:ignore="VectorDrawableCompat" />
+                        >
 
-                    <EditText
-                        android:id="@+id/editdate"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginEnd="16dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="8dp"
-                        android:background="@color/white"
-                        android:drawableEnd="@drawable/arrow_addexpense"
-                        android:hint="@string/date"
-                        android:inputType="text"
-                        android:singleLine="true"
-                        android:focusable="false"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/imageDate"
-                        app:layout_constraintTop_toBottomOf="@+id/textDate"
-                        app:layout_constraintVertical_bias="0.0" />
+                        <TextView
+                            android:id="@+id/textDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginStart="44dp"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/date"
+                            app:layout_constraintBottom_toTopOf="@+id/editdate"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/imageDate"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                </android.support.constraint.ConstraintLayout>
+                        <ImageView
+                            android:id="@+id/imageDate"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:contentDescription="@string/date"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textDate"
+                            app:srcCompat="@drawable/calendar"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <EditText
+                            android:id="@+id/editdate"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@color/white"
+                            android:drawableEnd="@drawable/arrow_addexpense"
+                            android:hint="@string/date"
+                            android:inputType="text"
+                            android:singleLine="true"
+                            android:focusable="false"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/imageDate"
+                            app:layout_constraintTop_toBottomOf="@+id/textDate"
+                            app:layout_constraintVertical_bias="0.0" />
+
+                    </android.support.constraint.ConstraintLayout>
 
 
-            </android.support.v7.widget.CardView>
+                </android.support.v7.widget.CardView>
 
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="false"
+            android:layout_centerHorizontal="false"
+            android:orientation="horizontal"
+
+          >
+
+            <Button
+                android:id="@+id/btnnew"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="1"
+                android:background="@color/graycolor"
+                android:text="@string/new_expense"
+                tools:ignore="ButtonStyle" />
+
+            <Button
+                android:id="@+id/btnsave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/blue"
+                android:text="@string/save"
+                tools:ignore="ButtonStyle" />
 
         </LinearLayout>
 
-    </ScrollView>
-
-    <LinearLayout
-        android:id="@+id/ll"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="false"
-        android:layout_centerHorizontal="false"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btnnew"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="1dp"
-            android:layout_weight="1"
-            android:background="@color/graycolor"
-            android:onClick="btnnew"
-            android:text="@string/new_expense"
-            tools:ignore="ButtonStyle" />
-
-        <Button
-            android:id="@+id/btnsave"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@color/blue"
-            android:text="@string/save"
-            tools:ignore="ButtonStyle" />
-
-    </LinearLayout>
+    </RelativeLayout>
 
 
-</RelativeLayout>
+
+
+</layout>

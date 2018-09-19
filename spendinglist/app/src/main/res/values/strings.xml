@@ -42,7 +42,6 @@
     </array>
     <!--End Category, addExpense-->
 
-
     <string name="title_activity_nav">NavActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -59,8 +58,8 @@
     <string name="amount">Amount(EURO)</string>
     <string name="account">Account</string>
     <string name="date">Date</string>
-    <string name="new_expense">NEW EXPENSE</string>
-    <string name="save">SAVE EXPENSE</string>
+    <string name="new_expense">NEW</string>
+    <string name="save">SAVE</string>
     <string name="image">imagespiner</string>
     <string name="imagedes">desrecption</string>
 
