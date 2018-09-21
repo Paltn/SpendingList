@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
+        <import type="java.util.Date"/>
+
         <variable name="viewModel"
             type="com.example.pcardoso.spendinglist.viewmodelss.AddExpenseViewModel"/>
     </data>
@@ -39,7 +42,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/graycolor"
-
                         android:orientation="horizontal">
 
                         <LinearLayout
@@ -87,6 +89,7 @@
                                 android:id="@+id/edtAmount"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:text="@={viewModel.expense.amount}"
                                 android:layout_marginLeft="8dp"
                                 android:layout_marginRight="8dp"
                                 android:background="@color/white"
@@ -156,7 +159,7 @@
                             android:inputType="text"
                             android:singleLine="true"
                             android:textSize="18sp"
-                            android:text="@={viewModel.addExpense.title}"
+                            android:text="@={expense.title}"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="1.0"
@@ -188,21 +191,19 @@
                             android:layout_marginTop="8dp"
                             android:text="@string/category"
                             app:layout_constraintEnd_toEndOf="parent"
-
                             app:layout_constraintTop_toTopOf="parent" />
 
 
                         <Spinner
                             android:id="@+id/spinner_category"
-
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="8dp"
                             android:layout_marginEnd="4dp"
                             android:layout_marginStart="4dp"
                             android:layout_marginTop="8dp"
-                            app:layout_constraintBottom_toBottomOf="parent"
 
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/textcategory"
@@ -263,6 +264,7 @@
                             android:inputType="text"
                             android:singleLine="true"
                             android:textSize="18sp"
+                            android:text="@={viewModel.expense.description}"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="1.0"
@@ -290,7 +292,7 @@
                         >
 
                         <TextView
-                            android:id="@+id/textDate"
+                            android:id="@+id/tdDte"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="8dp"
@@ -298,13 +300,13 @@
                             android:layout_marginStart="44dp"
                             android:layout_marginTop="8dp"
                             android:text="@string/date"
-                            app:layout_constraintBottom_toTopOf="@+id/editdate"
+                            app:layout_constraintBottom_toTopOf="@+id/editData"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@+id/imageDate"
+                            app:layout_constraintStart_toEndOf="@+id/imageData"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <ImageView
-                            android:id="@+id/imageDate"
+                            android:id="@+id/imageData"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="8dp"
@@ -313,12 +315,12 @@
                             android:contentDescription="@string/date"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/textDate"
+                            app:layout_constraintTop_toBottomOf="@+id/tdDte"
                             app:srcCompat="@drawable/calendar"
                             tools:ignore="VectorDrawableCompat" />
 
                         <EditText
-                            android:id="@+id/editdate"
+                            android:id="@+id/editData"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="8dp"
@@ -330,11 +332,11 @@
                             android:hint="@string/date"
                             android:inputType="text"
                             android:singleLine="true"
-                            android:focusable="false"
+                            android:text="@{viewModel.expense.stringDate}"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@+id/imageDate"
-                            app:layout_constraintTop_toBottomOf="@+id/textDate"
+                            app:layout_constraintStart_toEndOf="@+id/imageData"
+                            app:layout_constraintTop_toBottomOf="@+id/tdDte"
                             app:layout_constraintVertical_bias="0.0" />
 
                     </android.support.constraint.ConstraintLayout>

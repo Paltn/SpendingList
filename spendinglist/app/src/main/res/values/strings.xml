@@ -9,7 +9,7 @@
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <!--names Account, addExpense-->
+    <!--names Account, AddExpenseActivity-->
 
     <string-array name="namesAccount">
         <item>Wallet</item>
@@ -21,9 +21,9 @@
         <item>@drawable/baseline_visibility_off_black_18</item>
         <item>@drawable/baseline_visibility_off_black_18</item>
     </array>
-    <!--END names Account, addExpense-->
+    <!--END names Account, AddExpenseActivity-->
 
-    <!-- namesCategory Account, addExpense -->
+    <!-- namesCategory Account, AddExpenseActivity -->
     <string-array name="namescategory">
         <item>Holiday</item>
         <item>Restaurant</item>
@@ -40,7 +40,7 @@
         <item>@drawable/lightddexpense</item>
         <item>@drawable/bedddexpense</item>
     </array>
-    <!--End Category, addExpense-->
+    <!--End Category, AddExpenseActivity-->
 
     <string name="title_activity_nav">NavActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>

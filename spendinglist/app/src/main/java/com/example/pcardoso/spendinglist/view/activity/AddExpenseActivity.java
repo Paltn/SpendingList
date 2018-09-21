@@ -2,10 +2,12 @@ package com.example.pcardoso.spendinglist.view.activity;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
+import android.arch.lifecycle.ViewModelProviders;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
+import android.util.Log;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.Spinner;
@@ -13,44 +15,47 @@ import android.widget.Spinner;
 import com.example.pcardoso.spendinglist.R;
 import com.example.pcardoso.spendinglist.databinding.ActivityAddExpenseBinding;
 import com.example.pcardoso.spendinglist.view.adapter.CustomAdapter;
+import com.example.pcardoso.spendinglist.viewmodelss.AddExpenseViewModel;
 
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 
 public class AddExpenseActivity extends AppCompatActivity {
 
-    DatePickerDialog picker;
-    SimpleDateFormat dateFormat;
-
+    private static final String TAG = AddExpenseActivity.class.getSimpleName();
+    private AddExpenseViewModel viewModel;
     ActivityAddExpenseBinding binding;
+    DatePickerDialog picker;
+
 
     @SuppressLint("SimpleDateFormat")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        viewModel = ViewModelProviders.of(this).get(AddExpenseViewModel.class);
+        Log.d(TAG,"My title is: " + viewModel.getExpense().getTitle());
 
-        dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+
         binding = DataBindingUtil.setContentView(this, R.layout.activity_add_expense);
-        binding.editdate.setText(dateFormat.format(new Date()));
+        binding.setViewModel(viewModel);
+       // dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        //binding.editData.setText(dateFormat.format(new Date()));
 
-        mcustomadapter(binding.spinnerAccount);//call mcustomadapter
-        mcustomadaptercategory(binding.spinnerCategory);
-        mcalendar();
+        listAdpAccount(binding.spinnerAccount);//call mcustomadapter
+        listAdpCategory(binding.spinnerCategory);
+        openCalendar();
 
     }
 
-    private void mcustomadapter(Spinner spinnerAccount) {
+    private void listAdpAccount(Spinner spinnerAccount) {
 
         Integer[] images = {R.drawable.wallet, R.drawable.creditcard, R.drawable.bank};
 
         CustomAdapter customAdapter = new CustomAdapter(AddExpenseActivity.this,
                 getResources().getStringArray(R.array.namesAccount), images);
         spinnerAccount.setAdapter(customAdapter);
-
     }
 
-    private void mcustomadaptercategory(Spinner spCategory) {
+    private void listAdpCategory(Spinner spCategory) {
 
         Integer[] images = {R.drawable.beachddexpense,
                 R.drawable.restaurantddexpense,
@@ -64,11 +69,11 @@ public class AddExpenseActivity extends AppCompatActivity {
 
     }
 
-    private void mcalendar() {
+    private void openCalendar() {
 
-        binding.editdate.setInputType(InputType.TYPE_NULL);
+        binding.editData.setInputType(InputType.TYPE_NULL);
 
-        binding.editdate.setOnClickListener(new View.OnClickListener() {
+        binding.editData.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -83,8 +88,9 @@ public class AddExpenseActivity extends AppCompatActivity {
                             @SuppressLint("SetTextI18n")
                             @Override
                             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-
-                                binding.editdate.setText(dayOfMonth + "." + (monthOfYear + 1) + "." + year);
+                                 viewModel.getExpense().setStringDate(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
+                                // viewModel.updateFiled()
+                                 //binding.editData.setText(dayOfMonth + "." + (monthOfYear + 1) + "." + year);
                             }
                         }, year, month, day);
                 picker.show();
@@ -95,25 +101,30 @@ public class AddExpenseActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                binding.spinnerAccount.setSelection(0);
+                Log.d(TAG,"My title is: " + viewModel.getExpense().getTitle());
+                Log.d(TAG,"My description is: " + viewModel.getExpense().getDescription());
+                Log.d(TAG,"My string date is: " + viewModel.getExpense().getStringDate());
+                Log.d(TAG,"My category is: " + viewModel.getExpense().getCategory());
+                /*binding.spinnerAccount.setSelection(0);
                 binding.edtAmount.setText("");
                 binding.edtTitle.setText("");
                 binding.spinnerCategory.setSelection(0);
                 binding.editDescrition.setText("");
-
+*/
                 //dateFormat var globaal
-                binding.editdate.setText(dateFormat.format(new Date()));
+                //binding.editData.setText(dateFormat.format(new Date()));
 
             }
         });
 
     }
 
-
     @Override
     public void onUserInteraction() {
         super.onUserInteraction();
     }
+
+
 
 
 }
