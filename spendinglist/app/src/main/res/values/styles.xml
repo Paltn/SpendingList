@@ -1,39 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-    <!-- Customize your theme here. -->
-    <item name="colorPrimary">@color/colorPrimary</item>
-    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-    <item name="colorAccent">@color/colorAccent</item>
-    <item name="coordinatorLayoutStyle">@style/Widget.Support.CoordinatorLayout</item>
-    <item name="cardViewStyle">@style/CardView</item>
-
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="coordinatorLayoutStyle">@style/Widget.Support.CoordinatorLayout</item>
+        <item name="cardViewStyle">@style/CardView</item>
     </style>
 
     <style name="AppTheme2" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-
-
-
-</style>
+    </style>
 
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-       
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="colorAccent">@color/blue</item>
+    </style>
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-
-    <!-- Base application theme Edit/Buttons . -->
-    <style name="EditForm" >
+    <style name="EditForm">
         <item name="android:textColor">#00FF00</item>
         <item name="android:layout_marginBottom">8dp</item>
         <item name="android:layout_marginEnd">8dp</item>
@@ -41,12 +34,7 @@
         <item name="android:layout_marginTop">8dp</item>
         <item name="android:background">@drawable/line</item>
         <item name="android:padding">12dp</item>
-
     </style>
-
-
-
-
 
 
 </resources>

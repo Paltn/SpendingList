@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- color of dialog alert/date picker -->
+<resources>
+    <style name="TimePickerThemePP" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/blue</item>
+    </style>
+</resources>

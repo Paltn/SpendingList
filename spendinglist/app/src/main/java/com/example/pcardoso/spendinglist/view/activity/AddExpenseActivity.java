@@ -30,12 +30,11 @@ public class AddExpenseActivity extends AppCompatActivity {
     ActivityAddExpenseBinding binding;
     DatePickerDialog picker;
     SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
-    private AddExpenseViewModel viewModel;
     Expense expense;
-
     //conect to database
     FirebaseDatabase database;
     DatabaseReference ref;
+    private AddExpenseViewModel viewModel;
 
     @SuppressLint("SimpleDateFormat")
     @Override
@@ -56,8 +55,8 @@ public class AddExpenseActivity extends AppCompatActivity {
 
         //para coneccao a base  de dados
 //        database = FirebaseDatabase.getInstance();
-  //      ref = database.getReference("Expense");
-    //    expense = new Expense();
+        //      ref = database.getReference("Expense");
+        //    expense = new Expense();
         // fim da coneccao
     }
 
@@ -99,14 +98,15 @@ public class AddExpenseActivity extends AppCompatActivity {
                 int month = calendar.get(Calendar.MONTH);
                 int year = calendar.get(Calendar.YEAR);
 
-                picker = new DatePickerDialog(AddExpenseActivity.this,
+                picker = new DatePickerDialog(AddExpenseActivity.this, R.style.TimePickerThemePP,
+
                         new DatePickerDialog.OnDateSetListener() {
                             @SuppressLint("SetTextI18n")
                             @Override
                             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                                Log.d(TAG,"My string DATEEE is: " + viewModel.getExpense().getStringDate());
-                                 viewModel.getExpense().setStringDate(dayOfMonth + "." + (monthOfYear + 1) + "." + year);
-                               // binding.editData.setText(dayOfMonth + "." + (monthOfYear + 1) + "." + year);
+                                Log.d(TAG, "My string DATEEE is: " + viewModel.getExpense().getStringDate());
+                                viewModel.getExpense().setStringDate(dayOfMonth + "." + (monthOfYear + 1) + "." + year);
+                                // binding.editData.setText(dayOfMonth + "." + (monthOfYear + 1) + "." + year);
                             }
 
                         }, year, month, day);
