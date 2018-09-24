@@ -12,8 +12,6 @@ public class User {
     @NonNull
     private String Password;
 
-
-
     public  User(@NonNull final String email, @NonNull final String password) {
         Email = email;
         Password = password;

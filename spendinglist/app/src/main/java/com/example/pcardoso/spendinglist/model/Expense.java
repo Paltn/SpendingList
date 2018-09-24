@@ -74,26 +74,20 @@ public class Expense extends BaseObservable {
         this.date = date;
     }
 
-    public String getStringDate(){
-
+    public String getStringDate() {
         @SuppressLint("SimpleDateFormat")
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-
+        SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
         return sdf.format(date);
     }
 
-    public void setStringDate(String input){
+    public void setStringDate(String input) {
         @SuppressLint("SimpleDateFormat")
-        SimpleDateFormat aa = new SimpleDateFormat("dd/MM/yyyy");
-
+        SimpleDateFormat aa = new SimpleDateFormat("dd.MM.yyyy");
         try {
-            this.date=aa.parse(input);
+            this.date = aa.parse(input);
         } catch (ParseException e) {
             e.printStackTrace();
         }
-
     }
-
-
 
 }

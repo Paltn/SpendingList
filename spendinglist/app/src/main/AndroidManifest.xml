@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.pcardoso.spendinglist">
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,10 +10,9 @@
         android:theme="@style/AppTheme">
         <activity android:name=".view.activity.AddExpenseActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"
-                    android:windowSoftInputMode="adjustPan"
-                    />
-
+                <action
+                    android:name="android.intent.action.MAIN"
+                    android:windowSoftInputMode="adjustPan" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -26,16 +24,15 @@
         <activity
             android:name=".view.activity.RegisterUsersActivity"
             android:screenOrientation="portrait" />
-
-        <activity android:name=".view.activity.AddNotificationActivity"
-            android:label="Notification"
-            />
-        <activity android:name=".view.activity.CalculatorActivity"
-            android:label="Calculator"
-            />
-        <activity android:name=".view.activity.ReportActivity"
-            android:label="Report"
-            ></activity>
+        <activity
+            android:name=".view.activity.AddNotificationActivity"
+            android:label="Notification" />
+        <activity
+            android:name=".view.activity.CalculatorActivity"
+            android:label="Calculator" />
+        <activity
+            android:name=".view.activity.ReportActivity"
+            android:label="Report" />
     </application>
 
 </manifest>

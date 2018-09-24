@@ -75,7 +75,6 @@ public class LoginViewModel extends BaseObservable {
         }
         preferences = PreferenceManager.getDefaultSharedPreferences(context);
         editor=preferences.edit();
-
         checkSharedPreferences();
 
     }

@@ -8,13 +8,17 @@ import java.util.Date;
 
 public class AddExpenseViewModel extends ViewModel {
 
+    Date date = new Date();
+
     private Expense expense;
 
     public Expense getExpense() {
-        if(expense == null){
-            Date date = new Date();
-            expense = new Expense("","","","","",date);
+        if (expense == null) {
+
+            expense = new Expense("", "", "", "", "", date);
+
         }
+
         return expense;
     }
 
@@ -22,11 +26,9 @@ public class AddExpenseViewModel extends ViewModel {
         this.expense = expense;
     }
 
-   /* public updateField(){
-       notify();
+   /* public void updateField(){
+       notifyAll();
     }*/
-
-
 
 
 }
