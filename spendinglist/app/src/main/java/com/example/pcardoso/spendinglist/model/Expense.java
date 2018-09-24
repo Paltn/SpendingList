@@ -2,6 +2,7 @@ package com.example.pcardoso.spendinglist.model;
 
 import android.annotation.SuppressLint;
 import android.databinding.BaseObservable;
+import android.databinding.Bindable;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -15,6 +16,9 @@ public class Expense extends BaseObservable {
     private String category;
     private String description;
     private Date date;
+
+    public Expense() {
+    }
 
     public Expense(String account, String amount, String title, String category, String description, Date date) {
         this.account = account;
@@ -73,18 +77,22 @@ public class Expense extends BaseObservable {
     public void setDate(Date date) {
         this.date = date;
     }
-
+    @Bindable
     public String getStringDate() {
         @SuppressLint("SimpleDateFormat")
         SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
+
         return sdf.format(date);
     }
-
+    @Bindable
     public void setStringDate(String input) {
         @SuppressLint("SimpleDateFormat")
         SimpleDateFormat aa = new SimpleDateFormat("dd.MM.yyyy");
         try {
             this.date = aa.parse(input);
+            notifyChange(); //notifica sobre alteracoes na data
+            //envia para o view model as alteracoes
+
         } catch (ParseException e) {
             e.printStackTrace();
         }
