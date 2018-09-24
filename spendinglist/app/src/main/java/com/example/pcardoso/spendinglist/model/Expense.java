@@ -4,6 +4,8 @@ import android.annotation.SuppressLint;
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 
+import com.example.pcardoso.spendinglist.BR;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -77,6 +79,7 @@ public class Expense extends BaseObservable {
     public void setDate(Date date) {
         this.date = date;
     }
+
     @Bindable
     public String getStringDate() {
         @SuppressLint("SimpleDateFormat")
@@ -84,14 +87,18 @@ public class Expense extends BaseObservable {
 
         return sdf.format(date);
     }
-    @Bindable
+
+
     public void setStringDate(String input) {
         @SuppressLint("SimpleDateFormat")
         SimpleDateFormat aa = new SimpleDateFormat("dd.MM.yyyy");
         try {
             this.date = aa.parse(input);
-            notifyChange(); //notifica sobre alteracoes na data
-            //envia para o view model as alteracoes
+
+            //Notifica os ouvintes que uma propriedade específica foi alterada.
+           
+            notifyPropertyChanged(BR.stringDate);
+            //notifica o view model as alteracoes
 
         } catch (ParseException e) {
             e.printStackTrace();
