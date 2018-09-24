@@ -88,7 +88,13 @@ public class Expense extends BaseObservable {
         return sdf.format(date);
     }
 
+/*
+notifyChange
+    Notifica os ouvintes que todas as propriedades dessa instância foram alteradas
 
+notifyPropertyChanged
+    Notifica os ouvintes que uma propriedade específica foi alterada
+ */
     public void setStringDate(String input) {
         @SuppressLint("SimpleDateFormat")
         SimpleDateFormat aa = new SimpleDateFormat("dd.MM.yyyy");
@@ -96,7 +102,7 @@ public class Expense extends BaseObservable {
             this.date = aa.parse(input);
 
             //Notifica os ouvintes que uma propriedade específica foi alterada.
-           
+
             notifyPropertyChanged(BR.stringDate);
             //notifica o view model as alteracoes
 
