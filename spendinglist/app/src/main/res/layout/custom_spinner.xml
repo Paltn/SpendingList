@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_toEndOf="@+id/imgAccount"
         android:padding="5dp"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/blue"
         android:textSize="20sp" />
 
 </RelativeLayout>

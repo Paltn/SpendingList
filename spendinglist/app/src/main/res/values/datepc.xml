@@ -5,4 +5,10 @@
     <style name="TimePickerThemePP" parent="Theme.AppCompat.Light.Dialog">
         <item name="colorAccent">@color/blue</item>
     </style>
+
+    <!-- cor da spiner-->
+    <style name="Spine" parent="android:Widget.DropDownItem.Spinner">
+        <item name="android:textAppearance">@color/blue</item>
+    </style>
+
 </resources>

@@ -32,6 +32,7 @@
         <item>Light</item>
         <item>Accommodation</item>
     </string-array>
+
     <array name="imagesCategoryAccount">
         <item>@drawable/beachddexpense</item>
         <item>@drawable/restaurantddexpense</item>

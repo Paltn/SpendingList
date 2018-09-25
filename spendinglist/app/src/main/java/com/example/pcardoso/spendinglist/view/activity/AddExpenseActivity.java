@@ -17,8 +17,6 @@ import com.example.pcardoso.spendinglist.databinding.ActivityAddExpenseBinding;
 import com.example.pcardoso.spendinglist.model.Expense;
 import com.example.pcardoso.spendinglist.view.adapter.CustomAdapter;
 import com.example.pcardoso.spendinglist.viewmodelss.AddExpenseViewModel;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -32,8 +30,8 @@ public class AddExpenseActivity extends AppCompatActivity {
     SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
     Expense expense;
     //conect to database
-    FirebaseDatabase database;
-    DatabaseReference ref;
+    //FirebaseDatabase database;
+    //DatabaseReference ref;
     private AddExpenseViewModel viewModel;
 
     @SuppressLint("SimpleDateFormat")
@@ -67,8 +65,6 @@ public class AddExpenseActivity extends AppCompatActivity {
         CustomAdapter customAdapter = new CustomAdapter(AddExpenseActivity.this,
                 getResources().getStringArray(R.array.namesAccount), images);
         spinnerAccount.setAdapter(customAdapter);
-
-
     }
 
     private void listAdpCategory(Spinner spCategory) {
@@ -80,8 +76,11 @@ public class AddExpenseActivity extends AppCompatActivity {
                 R.drawable.bedddexpense};
 
         CustomAdapter custcatey = new CustomAdapter(AddExpenseActivity.this,
-                getResources().getStringArray(R.array.namescategory), images);
+                 getResources().getStringArray(R.array.namescategory), images);
+
+        spCategory.setDropDownWidth(R.style.Spine);
         spCategory.setAdapter(custcatey);
+
 
     }
 
