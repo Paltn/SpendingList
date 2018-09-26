@@ -62,6 +62,21 @@
     <string name="new_expense">NEW</string>
     <string name="save">SAVE</string>
     <string name="image">imagespiner</string>
-    <string name="imagedes">desrecption</string>
+    <string name="imagedes">descreption</string>
+    <string name="notifications">Notifications</string>
 
-</resources>
+
+    <string name="desExpense">Expense</string>
+    <string name="desCalculator">Calculator</string>
+
+    <!--Activity Main images-->
+        <string name="imgExpense">ImgExpense</string>
+        <string name="imgCalculator">ImgCalculator</string>
+        <string name="imgNotification">ImgNotifications</string>
+        <string name="imageReport">ImgReport</string>
+    <!--Activity Main images-->
+
+
+
+
+    </resources>

@@ -16,7 +16,6 @@ public class AddExpenseViewModel extends ViewModel {
         if (expense == null) {
 
             expense = new Expense("", "", "", "", "", date);
-
         }
 
         return expense;

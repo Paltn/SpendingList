@@ -57,16 +57,13 @@ public class CustomAdapter extends ArrayAdapter<Integer> {
 
         } else {
             viewHolder = (ViewHolder) view.getTag();
-
         }
-
         String title = titles.get(position);
 
         if (title != null && !title.isEmpty()) {
             viewHolder.title.setText(title);
             viewHolder.image.setImageResource(images.get(position));
         }
-
         return view;
     }
 

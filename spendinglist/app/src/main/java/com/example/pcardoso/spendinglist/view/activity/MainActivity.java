@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import com.example.pcardoso.spendinglist.R;
 
-public class MainActivity extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
 
     @Override
@@ -23,10 +23,8 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.main);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -35,8 +33,6 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-
     }
 
     @Override
@@ -90,35 +86,30 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
         } else if (id == R.id.category) {
 
         }
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.main);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-    public void add (View v)
-    {
+
+    public void add(View v) {
         Intent aa = new Intent(this, AddExpenseActivity.class);
         startActivity(aa);
-
     }
 
-    public void calculator (View v)
-    {
+    public void calculator(View v) {
         Intent aa = new Intent(this, CalculatorActivity.class);
         startActivity(aa);
 
     }
-    public void notification (View v) {
+
+    public void notification(View v) {
         Intent aa = new Intent(this, AddNotificationActivity.class);
         startActivity(aa);
     }
 
-    public void report (View v) {
+    public void report(View v) {
         Intent aa = new Intent(this, ReportActivity.class);
         startActivity(aa);
     }
-
-
-
 
 }

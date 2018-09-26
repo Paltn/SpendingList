@@ -24,7 +24,6 @@ public class LoginViewModel extends BaseObservable {
     private  SharedPreferences.Editor editor;
     private CheckBox mcheckBox;
 
-
     @Bindable
     public String toastMessage = null;
 
@@ -45,7 +44,6 @@ public class LoginViewModel extends BaseObservable {
         user = new User("", "");
 
     }
-
 
     public void afterEmailTextChanged(CharSequence s) {
 

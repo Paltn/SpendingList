@@ -16,7 +16,6 @@
         android:background="@mipmap/backgroud">
 
         <LinearLayout
-
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="100dp"
@@ -24,24 +23,22 @@
             android:paddingLeft="20dp"
             android:paddingRight="20dp">
 
-
             <LinearLayout
                 android:layout_width="370dp"
                 android:layout_height="65dp"
                 android:layout_marginBottom="16dp"
                 android:background="@android:color/transparent"
                 android:onClick="add"
-
                 android:orientation="horizontal">
 
                 <ImageButton
-
                     android:id="@+id/imgaddexpense"
                     android:layout_width="1dp"
                     android:layout_height="65dp"
                     android:layout_gravity="center_horizontal|center"
                     android:layout_weight="1"
                     android:background="@color/bluecolor"
+                    android:contentDescription="@string/imgExpense"
                     android:padding="4dp"
                     android:scaleType="fitStart"
                     app:srcCompat="@drawable/invoice" />
@@ -54,7 +51,7 @@
                     android:background="@color/bluecolor"
                     android:fontFamily="serif"
                     android:gravity="center_vertical"
-                    android:text="Expense"
+                    android:text="@string/desExpense"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -73,33 +70,32 @@
                 android:layout_width="325dp"
                 android:layout_height="65dp"
                 android:layout_marginBottom="16dp"
-                android:orientation="horizontal"
                 android:onClick="calculator"
+                android:orientation="horizontal"
                 android:padding="4dp">
 
                 <ImageButton
-
                     android:id="@+id/imgcalculator"
                     android:layout_width="1dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="65dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginLeft="1dp"
-
                     android:layout_weight="1"
                     android:background="@color/grencolor"
+                    android:contentDescription="@string/imgCalculator"
                     android:padding="4dp"
                     android:scaleType="fitStart"
                     app:srcCompat="@drawable/calculator" />
 
                 <TextView
                     android:id="@+id/textView4"
-                    android:layout_width="120dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@color/grencolor"
                     android:fontFamily="serif"
                     android:gravity="center_vertical"
-                    android:text="Calculator"
+                    android:text="@string/desCalculator"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:tint="@color/grencolor" />
@@ -118,31 +114,30 @@
                 android:layout_width="278dp"
                 android:layout_height="65dp"
                 android:layout_marginBottom="16dp"
-                android:orientation="horizontal"
                 android:onClick="notification"
+                android:orientation="horizontal"
                 android:padding="4dp">
 
                 <ImageButton
                     android:id="@+id/imgnotification"
-                    android:layout_width="7dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="53dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="left"
-                    android:layout_weight="1"
                     android:background="@color/orange"
+                    android:contentDescription="@string/imgNotification"
                     android:padding="4dp"
                     android:scaleType="fitStart"
                     app:srcCompat="@drawable/notification" />
 
                 <TextView
-
                     android:id="@+id/txtnoti"
-                    android:layout_width="95dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@color/orange"
                     android:fontFamily="serif"
                     android:gravity="center_vertical"
-                    android:text="Notifications"
+                    android:text="@string/notifications"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -162,17 +157,16 @@
                 android:layout_height="65dp"
                 android:onClick="report"
                 android:orientation="horizontal"
-
                 android:padding="4dp">
 
                 <ImageButton
                     android:id="@+id/imgreport"
-
                     android:layout_width="7dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="left"
                     android:layout_weight="1"
                     android:background="@color/yellow"
+                    android:contentDescription="@string/imageReport"
                     android:padding="8dp"
                     android:scaleType="fitStart"
                     app:srcCompat="@drawable/reportmain" />
@@ -181,17 +175,13 @@
                     android:id="@+id/txtreport"
                     android:layout_width="50dp"
                     android:layout_height="match_parent"
-
                     android:layout_weight="1"
-
-
                     android:background="@color/yellow"
                     android:fontFamily="serif"
                     android:gravity="center_vertical"
                     android:text="Report"
                     android:textSize="18sp"
                     android:textStyle="bold" />
-
 
                 <ImageView
                     android:id="@+id/idimg4"
@@ -203,30 +193,27 @@
 
             </LinearLayout>
 
-
         </LinearLayout>
-    </FrameLayout>
 
+    </FrameLayout>
+<!-- -->
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"
-        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
+        android:visibility="gone"
         app:headerLayout="@layout/nav_header_nav"
-        app:menu="@menu/activity_nav_drawer"
-
-        >
+        app:menu="@menu/activity_nav_drawer" >
 
     </android.support.design.widget.NavigationView>
 
-    <include
+       <include
         layout="@layout/app_bar_nav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
 
 
 </android.support.v4.widget.DrawerLayout>

@@ -56,13 +56,20 @@ public class Expense extends BaseObservable {
 
     }
 
+
+    @Bindable
     public String getCategory() {
         return category;
     }
-
+    @Bindable
     public void setCategory(String category) {
+
         this.category = category;
     }
+
+
+
+
 
     public String getDescription() {
         return description;
